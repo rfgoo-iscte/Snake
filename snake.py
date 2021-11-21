@@ -85,7 +85,7 @@ def scoreboard():
         print("erro no ficheiro")
 
 
-time.sleep(2.5)
+time.sleep(3)
 while True:
 
     clock.tick(tick)
@@ -97,13 +97,13 @@ while True:
             exit()
 
         if event.type == pg.KEYDOWN:
-            if event.key == pg.K_UP:
+            if event.key == pg.K_UP and direction != DOWN:
                 direction = UP
-            if event.key == pg.K_DOWN:
+            if event.key == pg.K_DOWN and direction != UP:
                 direction = DOWN
-            if event.key == pg.K_RIGHT:
+            if event.key == pg.K_RIGHT and direction != LEFT:
                 direction = RIGHT
-            if event.key == pg.K_LEFT:
+            if event.key == pg.K_LEFT and direction != RIGHT:
                 direction = LEFT
 
     screen.fill((r, g, b))
